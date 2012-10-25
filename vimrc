@@ -36,6 +36,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'tomtom/quickfixsigns_vim'
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'git://github.com/larssmit/vim-getafe.git'
 " Commands
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -141,7 +143,7 @@ endif
 " Color
 " ---------------
 set background=dark
-colorscheme jellybeans
+colorscheme Jellybeans
 
 " ---------------
 " Backups
@@ -255,6 +257,7 @@ command! W w
 command! Q q
 map <F1> <Esc>
 imap <F1> <Esc>
+imap jk <Esc>
 " Crazy flying pinky
 cnoremap w' w<CR>
 " This mapping along with mapping ; to : allows for quick save with ;w;
@@ -277,6 +280,7 @@ nmap <C-d> <C-b>
 if has("gui_macvim")
   nmap <D-f> <C-f>
   nmap <D-d> <C-b>
+  nmap <D-r> :NERDTree<CR>
 else
   nmap <M-f> <C-f>
   nmap <M-d> <C-b>
@@ -509,6 +513,7 @@ if has('ruby')
   " Conditional Mappings
   if has('unix')
     nnoremap <silent><C-t> :CommandT<CR>
+    nnoremap <silent><C-c> :NERDTreeToggle<CR>
   else
     nnoremap <silent><M-t> :CommandT<CR>
   endif
